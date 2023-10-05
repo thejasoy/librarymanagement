@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+{% block body %}
+{% from "/formhelpers.html" import render_field %}
+<br>
+<h1 style="text-align:center;"><b>Issue Book</b> </h1>
+
+<form method="POST" action="">
+    <div class="form-group">
+        {{render_field(form.book_id, class_="form-control")}}
+    </div><br>
+    <div class="form-group">
+        {{render_field(form.member_id, class_="form-control")}}
+    </div><br>
+    <div class="form-group">
+        {{render_field(form.per_day_fee, class_="form-control")}}
+    </div>
+    <br>
+    <p><button type="submit" class="btn btn-success" value="Submit">Submit</button></p>
+</form>
+{% endblock %} 

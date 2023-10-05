@@ -1,0 +1,4 @@
+{% macro render_field(field) %}
+    <label style="font-weight: bold; color: #05093c; font-size: 20px;">{{ field.label }}</label>
+    {{ field(**kwargs)|safe }}
+{% endmacro %}

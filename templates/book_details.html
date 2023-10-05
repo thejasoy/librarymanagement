@@ -1,0 +1,69 @@
+{% extends 'layout.html' %}
+{% block body %}
+<br>
+<h1 style="text-align:center;"><b>Book details</b></h1>
+<hr>
+<table class="table table-left">
+    <tbody>
+        <tr>
+            <td>Book ID</td>
+            <td>{{book.id}}</td>
+        </tr>
+        <tr>
+            <td>Title</td>
+            <td>{{book.title}}</td>
+        </tr>
+        <tr>
+            <td>Author</td>
+            <td>{{book.author}}</td>
+        </tr>
+        <tr>
+            <td>Average Rating</td>
+            <td>{{book.average_rating}}</td>
+        </tr>
+        <tr>
+            <td>ISBN</td>
+            <td>{{book.isbn}}</td>
+        </tr>
+        <tr>
+            <td>ISBN13</td>
+            <td>{{book.isbn13}}</td>
+        </tr>
+        <tr>
+            <td>Language</td>
+            <td>{{book.language_code}}</td>
+        </tr>
+        <tr>
+            <td>No. of Pages</td>
+            <td>{{book. num_pages}}</td>
+        </tr>
+        <tr>
+            <td>No. of Ratings</td>
+            <td>{{book.ratings_count}}</td>
+        </tr>
+        <tr>
+            <td>No. of Text Reviews</td>
+            <td>{{book.text_reviews_count}}</td>
+        </tr>
+        <tr>
+            <td>Publication Date</td>
+            <td>{{book.publication_date}}</td>
+        </tr>
+        <tr>
+            <td>Publisher</td>
+            <td>{{book.publisher}}</td>
+        </tr>
+        <tr>
+            <td>Total No. of Books</td>
+            <td>{{book.total_quantity}}</td>
+        </tr>
+        <tr>
+            <td>Books Available to Rent</td>
+            <td>{{book.available_quantity}}</td>
+        </tr>
+        
+
+    </tbody>
+</table>
+
+{% endblock %}    

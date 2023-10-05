@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% block body %}
+{% from "/formhelpers.html" import render_field %}
+<br>
+<h1 style="text-align:center;"><b>Return Book</b></h1>
+<h5>Per Day Fee = {{transaction['per_day_fee']}}</h5>
+<br>
+<h5>Borrowed On = {{transaction['borrowed_on']}}</h5>
+<br>
+<h5>Rented for = {{difference}} days</h5>
+<br>
+<h5>Amount Due = {{total_charge}}</h5>
+<hr>
+<br>
+
+<form method="POST" action="">
+    <div class="form-group">
+        {{render_field(form.amount_paid, class_="form-control")}}
+    </div>
+    <br>
+    <p><button type="submit" class="btn btn-success" value="Submit">Submit</button></p>
+</form>
+{% endblock %}

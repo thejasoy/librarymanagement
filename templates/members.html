@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+{% block body %}
+<br>
+<h1 style="text-align:center;"><b>Members</b></h1>
+<br>
+<a class="btn btn-success" href="/member_add">Add New Member</a>
+<br>
+<br>
+{% if members%}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Outstanding Debt</th>
+            <th>Total Amount Spent</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for member in members %}
+        <tr>
+            <td>{{"{:05d}".format(member.id)}}</td>
+            <td>{{member.name}}</td>
+            <td>{{member.outstanding_debt}}</td>
+            <td>{{member.amount_spent}}</td>
+            <td><a href="/member_edit/{{member.id}}" class="btn btn-primary pull-right">Edit</a></td>
+            <td>
+                <form action="{{url_for('delete_member', id=member.id)}}" method="POST"
+                    onsubmit="return confirm('Are you sure?');">
+                    <input type="hidden" name="method" value="Delete">
+                    <input type="submit" value="Delete" class="btn btn-danger">
+                </form>
+            </td>
+            <td><a href="{{ url_for('member_details', id=member.id) }}" class="btn btn-info">Details</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    
+    
+</table>
+{% endif %}
+{% endblock %}

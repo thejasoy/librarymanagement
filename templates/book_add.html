@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+{% block body %}
+<br>
+<h1 style="text-align:center;"><b>Add New Book</b></h1>
+<br>
+<br>
+{% from "/formhelpers.html" import render_field %}
+<form method="POST" action="">
+    <div class="form-group">
+        {{render_field(form.id, class_="form-control")}}
+    </div><br>
+    <div class="form-group">
+        {{render_field(form.title, class_="form-control")}}
+    </div><br>
+    <div class="form-group">
+        {{render_field(form.author, class_="form-control")}}
+    </div><br>
+    <div class="form-group">
+        {{render_field(form.language_code, class_="form-control")}}
+    </div><br>
+    <div class="form-group">
+        {{render_field(form.total_quantity, class_="form-control")}}
+    </div>
+    <div class="form-group">
+        {{render_field(form.isbn, class_="form-control")}}
+    </div><br>
+    <div class="form-group">
+        {{render_field(form.isbn13, class_="form-control")}}
+    </div><br>
+    <div class="form-group">
+        {{render_field(form.average_rating, class_="form-control")}}
+    </div><br>
+    <div class="form-group">
+        {{render_field(form.num_pages, class_="form-control")}}
+    </div><br>
+    <div class="form-group">
+        {{render_field(form.ratings_count, class_="form-control")}}
+    </div><br>
+    <div class="form-group">
+        {{render_field(form.text_reviews_count, class_="form-control")}}
+    </div><br>
+    <div class="form-group">
+        {{render_field(form.publisher, class_="form-control")}}
+    </div><br>
+    <div class="form-group">
+        {{render_field(form.publication_date, class_="form-control", type="date")}}
+    </div><br>
+    <br>
+    <p><button type="submit" class="btn btn-success" value="Submit">Submit</button></p>
+</form>
+{% endblock %}
