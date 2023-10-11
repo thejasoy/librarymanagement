@@ -568,7 +568,7 @@ def book_issue():
             ])
 
             cur.execute(
-                "UPDATE books SET available_quantity=available_quantity-1, rented_count=rented_count+1 WHERE id=%s", [form.book_id.data])
+                "UPDATE books SET available_quantity=available_quantity-1 WHERE id=%s", [form.book_id.data])
 
             mysql.connection.commit()
 
